@@ -1,0 +1,10 @@
+name: Workflow contextuel
+# Le workflow va se déclencher à chaque push de mon application
+on: workflow_dispatch
+jobs:
+  info:
+    name: Affichage context
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output infos
+        uses: echo "${{ toJson(github)}}"
