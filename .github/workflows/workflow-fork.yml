@@ -1,0 +1,13 @@
+#Nom du workflow
+name: On fork workflow
+#Trigger
+on: 
+    fork: 
+#Les actions à faire
+jobs: 
+    notification: 
+        name: fork notification
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Fork message
+              run: echo "You did a fork ! I prefer spoons ^^"

@@ -1,18 +1,22 @@
-name: On issue
+#Nom du workflow
+name: Issue workflow
+#Trigger
 on: 
     issues: 
         types: opened
+#Les actions à faire
 jobs: 
-    commentaire: 
+    commentary: 
         runs-on: ubuntu-latest
         permissions:
             issues: write
         steps:
-            - run: gh issue comment $ISSUE_URL --body "Thanks to open this issue !"
+            - name: Comment 
               env: 
                 GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                ISSUE_AUTHOR: ${{github.event.issue.user.login}}
+                ISSUE_TITLE: ${{github.event.issue.title}}
                 ISSUE_URL: ${{github.event.issue.html_url}}
-    title: 
-        runs-on: ubuntu-latest
-        steps:
-            - run: echo "Nouvelle issue - ${{github.event.issue.title}}"
+              run: 
+                MESSAGE= "Bonjour $ISSUE_AUTHOR\nNous avons bien pris en compte votre problème du nom de $ISSUE_TITLE"
+                gh issue comment $ISSUE_URL --body "$MESSAGE"
