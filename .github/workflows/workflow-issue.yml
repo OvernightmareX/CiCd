@@ -1,0 +1,16 @@
+name: On issue
+on: 
+    issues: 
+        types: opened
+jobs: 
+    commentaire: 
+        runs-on: ubuntu-latest
+        steps:
+            - run: gh issue comment $ISSUE_URL --body "Thanks to open this issue !"
+              env: 
+                GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                ISSUE_URL: ${{github.event.issue.html_url}}
+    title: 
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Nouvelle issue - ${{github.event.issue.title}}"

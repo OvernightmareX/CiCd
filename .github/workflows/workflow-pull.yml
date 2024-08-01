@@ -1,0 +1,10 @@
+name: pull
+on: 
+    pull_request: 
+        types: opened
+    workflow_dispatch: 
+jobs: 
+    exemple: 
+        runs-on: ubunto-latest
+        steps: 
+            - run: echo "Il y a eu une pull request !"
