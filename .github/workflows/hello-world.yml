@@ -14,6 +14,7 @@ jobs:
               run: echo "Goodbye cruel world..."
     
     second-job: 
+        needs: first-job
         name: my second job
         runs-on: ubuntu-latest
         steps: 
