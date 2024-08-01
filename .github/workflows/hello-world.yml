@@ -5,9 +5,17 @@ on: workflow_dispatch
 #Les actions à faire
 jobs: 
     first-job: 
+        name: my first job
         runs-on: ubuntu-latest
         steps: 
             - name: hello
               run: echo "Hello world !"
             - name: bye
               run: echo "Goodbye cruel world..."
+    
+    second-job: 
+        name: my second job
+        runs-on: ubunto-latest
+        steps: 
+            - name: one step
+              run: echo "Je suis la aussi !"
