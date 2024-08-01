@@ -5,7 +5,7 @@ on: workflow_dispatch
 #Les actions à faire
 jobs: 
     first-job: 
-        runs-on: ubuntu:latest
+        runs-on: ubuntu-latest
         steps: 
             - name: hello
               run: echo "Hello world !"
