@@ -17,6 +17,6 @@ jobs:
                 ISSUE_AUTHOR: ${{github.event.issue.user.login}}
                 ISSUE_TITLE: ${{github.event.issue.title}}
                 ISSUE_URL: ${{github.event.issue.html_url}}
-              run: 
+              run: |
                 MESSAGE= "Bonjour $ISSUE_AUTHOR\nNous avons bien pris en compte votre problème du nom de $ISSUE_TITLE"
                 gh issue comment $ISSUE_URL --body "$MESSAGE"
