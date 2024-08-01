@@ -15,7 +15,7 @@ jobs:
     
     second-job: 
         name: my second job
-        runs-on: ubunto-latest
+        runs-on: ubuntu-latest
         steps: 
             - name: one step
               run: echo "Je suis la aussi !"
