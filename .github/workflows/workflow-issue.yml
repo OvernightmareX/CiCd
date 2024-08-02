@@ -18,4 +18,4 @@ jobs:
                 ISSUE_TITLE: ${{github.event.issue.title}}
                 ISSUE_URL: ${{github.event.issue.html_url}}
               run:
-                gh issue comment $ISSUE_URL --body "Bonjour $ISSUE_AUTHOR\nNous avons bien pris en compte votre problème du nom de $ISSUE_TITLE"
+                gh issue comment $ISSUE_URL --body "Bonjour $ISSUE_AUTHOR, nous avons bien pris en compte votre problème du nom de $ISSUE_TITLE"
