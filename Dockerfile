@@ -8,4 +8,4 @@ WORKDIR /app
 COPY target/.jar app.jar
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "exo6-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
